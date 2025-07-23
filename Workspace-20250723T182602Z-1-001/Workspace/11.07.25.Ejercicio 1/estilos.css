@@ -1,0 +1,45 @@
+.contacto {
+    display: inline-block;
+    width: 30%;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.titulo {
+    font-family: 'Comic Sans MS', cursive;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.titulo {
+    background-color: rgb(0, 210, 247);
+}
+
+.titulo1 { background-color: #f50a0a; }  
+.titulo2 { background-color: #ffa502; }  
+.titulo3 { background-color: #610c64; } 
+.titulo4 { background-color: #1e90ff; }  
+.titulo5 { background-color: #fc7646; }  
+.titulo6 { background-color: #70a1ff; }  
+.titulo7 { background-color: #eccc68; }  
+.titulo8 { background-color: #55ce55; }  
+.titulo9 { background-color: #fd4f5e; }  
+.titulo10 { background-color: #2f3542; } 
+.titulo11 { background-color: #b1ec25; } 
+
+div .titulo {
+    color: #222;
+    background-color: #af7af3; 
+}
+
+.contenedor {
+    text-align: center;
+}

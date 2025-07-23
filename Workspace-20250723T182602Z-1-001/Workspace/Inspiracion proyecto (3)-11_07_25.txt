@@ -1,0 +1,209 @@
+https://github.com/XPablo-97/ElCorteIngles
+
+.Me serviria para mi proyecto este diseño
+
+https://github.com/maca9569/paginacursoingles
+
+.Me seria muy util esta paleta de coloros por lo llamativo y presentacion 
+
+https://github.com/Dan24T/proyecto-ingles
+
+. Mensaje de error cuando no se inicie sesion correctamente
+
+Juan Esteban Muñoz Duque
+
+30/04/25
+
+
+
+Elementos del diagramaentidad relación
+R// 1) Entidades: Objetos principales (ejemplo "Estudiante" Y "Curso"). Rectángulos.
+2) Relaciones: Conexiones entre entidades (ejemplo "Estudiante toma Curso"). Líneas o rombos.
+3) Atributos: Propiedades de entidades (ejemplo "Nombre" Y  "ID"). Óvalos.
+
+
+Conceptos
+Clave primaria: Es como el carnet único de cada fila en una tabla. Nadie se repite, Ejemplo: el número de el celular
+
+Clave foránea: Un enlace que une dos tablas. Es como un código que apunta a la clave primaria de otra tabla. Ejemplo: el carnet de un estudiante en una tabla de notas.
+
+Clave compuesta: Cuando usas dos o más datos juntos para identificar una fila sin repetir. Ejemplo: número de pedido + fecha para que no se confundan.
+
+
+Tipos de datos en sql
+1) Números enteros (INT o INTEGER: Caja para números enteros, como tu edad (25) o cuántos libros tienes (3).
+
+2) Números con decimales (FLOAT, DECIMAL, DOUBLE): Para números con decimales, como el precio de un café (4.50) o tu nota (9.8).
+
+3) Texto corto (VARCHAR): Espacio para palabras o frases cortas, como tu nombre (Lucía) o un email.
+
+4) Texto largo (TEXT): Para textos largos, como un mensaje o la descripción de un producto.
+
+5) Fechas y horas (DATE, TIME, DATETIME): Guarda fechas o momentos, como tu cumple (2025-05-09) o una cita (2025-05-09 10:00).
+
+6) Verdadero o falso (BOOLEAN): Solo dice "sí" o "no", como si algo está encendido o apagado.
+
+7) Números grandes (BIGINT): Para números enormes, como las visitas a una web.
+
+8) Caracteres fijos (CHAR): Para textos cortos y fijos, como un código (MX).
+
+9) Archivos o imágenes (BLOB): Caja para fotos, videos o archivos grandes.
+
+
+Las 3 formas normales de bases de datos
+1) Todo clarito, sin mezclar datos. Cada fila tiene su ID único, y nada de listas en una celda. Ejemplo: no juntes "mates, historia" en una columna.
+
+2) Todo en la tabla debe depender de la clave completa, no solo de un pedacito. Ejemplo: el nombre del cliente va en otra tabla, no con los pedidos.
+
+3) Nada de datos que se deduzcan de otros. Ejemplo: guarda el año de nacimiento, no la edad, porque la calculas.
+
+09/05/2025
+
+
+
+
+Numéricos
+INT: Almacena números enteros sin decimales, como edades o cantidades.
+Es ideal cuando necesitas contar o identificar elementos con números enteros.
+
+TINYINT/SMALLINT/MEDIUMINT/BIGINT: Son versiones de INT con diferentes rangos.
+Se usan según el tamaño de número que necesites guardar, ahorrando espacio.
+
+DECIMAL(M,D): Guarda números con decimales de forma exacta.
+Perfecto para datos financieros donde la precisión es importante.
+
+FLOAT/DOUBLE: También guardan decimales, pero son menos exactos que DECIMAL.
+Útiles en cálculos científicos o cuando no se necesita tanta precisión.
+
+Texto
+CHAR(n): Guarda cadenas de texto con longitud fija.
+Si el texto es más corto, se rellena con espacios.
+
+VARCHAR(n): Guarda texto de longitud variable hasta un máximo n.
+Es eficiente en almacenamiento y muy usado para nombres o emails.
+
+TEXT: Guarda textos largos, como descripciones o artículos.
+No tiene un límite corto como VARCHAR, pero no permite índices fácilmente.
+
+Fecha y Hora
+DATE: Guarda solo la fecha en formato 'AAAA-MM-DD'.
+Útil para cumpleaños, fechas de registro o eventos.
+
+TIME: Guarda solo la hora en formato 'HH:MM:SS'.
+Ideal para guardar horarios específicos sin fecha.
+
+DATETIME: Guarda fecha y hora juntas.
+Sirve para registrar momentos exactos como registros o publicaciones.
+
+TIMESTAMP: Similar a DATETIME, pero se actualiza automáticamente.
+Muy usado para auditorías y seguimientos automáticos.
+
+Booleano
+BOOLEAN / BOOL: Guarda valores lógicos: verdadero (1) o falso (0).
+Perfecto para indicar estados como activo/inactivo o sí/no.
+
+Especiales
+ENUM: Permite definir una lista fija de valores posibles.
+Solo puedes guardar uno de esos valores por registro.
+
+SET: Similar a ENUM, pero permite seleccionar varios valores.
+Ideal para categorías múltiples como habilidades o intereses.
+
+14/05/2025
+
+
+
+
+
+CREATE TABLE estudiante ( id_estudiante INT PRIMARY KEY, nombre VARCHAR(100)NOT NULL, apellido VARCHAR (100) NOT NULL, id_grupo INT, FOREIGN KEY (id_grupo)REFERENCES grupo(id_grupo) );
+CREATE TABLE salon( id_salon INT PRIMARY KEY, numero VARCHAR(10)NOT NULL, ubicaciones VARCHAR(100) );
+CREATE TABLE aseo( id_aseo INT AUTO_INCREMENT PRIMARY KEY, id_estudiante INT NOT NULL, id_salon INT NOT NULL, fecha DATE NOT NULL, rol VARCHAR(50) NOT NULL, FOREIGN KEY (id_estudiante) REFERENCES estudiante(id_estudiante), FOREIGN KEY (id_salon) REFERENCES salon(id_salon) );
+INSERT INTO grupo (id_grupo,nombre_grupo) VALUES(1,'Grupo A');
+INSERT INTO grupo (id_grupo,nombre_grupo) VALUES(2,'Grupo A');
+INSERT INTO grupo (id_grupo,nombre_grupo) VALUES(3,'Grupo A');
+INSERT INTO grupo (id_grupo,nombre_grupo) VALUES(4,'Grupo A');
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(1,'Juan','Duque',1);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(2,'Samuel','Ocampo',1);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(3,'Thomas','Usuga',1);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(4,'Saray','Munera',1);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(5,'Juan','Salgado',1);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(6,'Daniela','Torres',2);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(7,'Miguel','Castro',2);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(8,'Miguel','Villa',2);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(9,'Santiago','Zapata',2);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(10,'Andres','Zapata',2);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(11,'Simon','Avila',3);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(12,'Dylan','Ocampo',3);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(13,'Harrizon','Lopes',3);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(14,'Andres','Chavarriaga',3);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(15,'Alexis','Avila',3);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(16,'Salome','Arroyave',4);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(17,'Salome','Garcia',4);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(18,'Manuela','Lopez',4);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(19,'Ana','Martinez',4);
+INSERT INTO estudiante(id_estudiante,nombre,apellido,id_grupo) VALUES(20,'Jhoan','Martinez',4);
+INSERT INTO salon(id_salon,numero,ubicaciones) VALUES(1,'A101','Edificio A');
+INSERT INTO salon(id_salon,numero,ubicaciones) VALUES(2,'A102','Edificio B');
+INSERT INTO salon(id_salon,numero,ubicaciones) VALUES(3,'A201','Edificio C');
+INSERT INTO salon(id_salon,numero,ubicaciones) VALUES(4,'A202','Edificio D');
+INSERT INTO salon(id_salon,numero,ubicaciones) VALUES(5,'A301','Edificio E');
+INSERT INTO salon(id_salon,numero,ubicaciones) VALUES(6,'A302','Edificio F');
+
+21/05/2025
+
+
+El modelo de caja en CSS es una representación visual de cómo se dibujan los elementos HTML 
+en una página web. Cada elemento HTML es considerado como una caja rectangular, y el modelo de caja define las diferentes 
+áreas que componen esa caja, así como cómo se calculan sus dimensiones. 
+
+Cómo funciona el modelo de caja:
+El navegador utiliza el modelo de caja para calcular el tamaño total que ocupa un elemento en la página. El ancho y la altura del elemento se calculan considerando:
+El ancho y la altura del contenido. 
+El padding, que se suma al ancho y la altura del contenido. 
+El borde, que también se suma al ancho y la altura del contenido. 
+El margen, que se utiliza para crear espacio entre elementos. 
+
+En CSS usamos diferentes unidades de medida para decirle al navegador cuánto deben medir las cosas (como textos, márgenes, anchos, etc.). Estas unidades se dividen en dos tipos: absolutas y relativas.
+
+Las unidades absolutas son fijas, lo que significa que siempre miden lo mismo, sin importar el tamaño de la pantalla o del texto. Por ejemplo, los píxeles (px) son los más usados en la web, y significan puntos en la pantalla. Otras como cm, mm, in (pulgadas), pt (puntos) o pc (picas) también existen, pero se usan más para impresión que para pantallas. Si pones un elemento con width: 100px, siempre medirá 100 píxeles.
+
+En cambio, las unidades relativas se adaptan al contexto. Por ejemplo, em y rem cambian según el tamaño del texto. em depende del tamaño de fuente del elemento padre, y rem se basa en el tamaño del texto del elemento raíz (normalmente el <html>). Esto es útil para que el diseño sea más flexible. Por ejemplo, si el texto base es de 16px, entonces 1rem equivale a 16px, y 2rem serían 32px.
+
+También hay unidades relativas al tamaño de la pantalla, como vw y vh, que significan "viewport width" y "viewport height". 1vw es el 1% del ancho de la pantalla, y 1vh es el 1% del alto. Estas unidades son muy útiles para hacer diseños que se adapten a diferentes dispositivos, como móviles, tablets o monitores grandes.
+
+En resumen, usás px cuando querés que algo tenga un tamaño fijo, rem y em para que los tamaños se adapten al texto, y vw o vh para que el diseño cambie según el tamaño de la pantalla. Así podés hacer sitios que se vean bien en cualquier dispositivo.
+
+6/06/2025
+
+
+Investigacion, Consulta
+
+¿Que es diseño responsivo?
+
+-Un diseño responsive, también conocido como diseño web adaptable o responsivo, es una técnica de desarrollo web que busca que las páginas web se vean y funcionen correctamente en una variedad de dispositivos, como computadoras de escritorio, tablets y teléfonos inteligentes. En esencia, un diseño responsivo permite que la estructura y el contenido de un sitio web se ajusten automáticamente al tamaño de la pantalla del dispositivo utilizado, ofreciendo una experiencia de usuario óptima. 
+
+¿Que es un grid en diseño responsivo?
+
+-es un sistema basado en filas y columnas que ayuda a organizar y alinear elementos de una página web, permitiendo que el diseño se adapte de manera fluida a diferentes tamaños de pantalla. Es una herramienta clave para asegurar que la experiencia del usuario sea consistente en dispositivos con distintos anchos de pantalla. 
+
+¿Que dispositivos se deben de tener en cuenta en diseño responsivo?
+
+-que una página web se vea bien en cualquier dispositivo, sin importar si es un celular, una tablet o una compu. La idea es que el contenido se ajuste solo al tamaño de la pantalla, para que no tengas que estar haciendo zoom o moviéndote de lado a lado.
+
+Entonces, al diseñar una página, tenemos que pensar en varios tipos de dispositivos:
+.TABLET
+.COMPUTADOR
+.CELULAR
+
+¿Aplica el diseño responsivo segun en navegador?
+
+-Sí, el diseño responsivo también depende del navegador, porque cada navegador puede mostrar la página de forma un poco diferente.
+
+Los navegadores modernos como Chrome, Firefox o Safari entienden bien el diseño responsivo. Pero si usas un navegador viejo, puede que algunas cosas no se vean como deberían.
+
+Por eso, cuando haces una página web responsiva, es buena idea probarla en varios navegadores y en diferentes tamaños de pantalla para asegurarte de que todo funcione bien.
+
+¿Que es flexBox en diseño responsivo?
+
+-Flexbox es un modelo de diseño en CSS que facilita la creación de layouts responsivos y flexibles. Permite alinear y distribuir espacio entre elementos de un contenedor, adaptándose fácilmente a diferentes tamaños de pantalla. Con propiedades como flex-direction, justify-content y align-items, se puede controlar la orientación, alineación y distribución de los elementos. Es ideal para centrar contenido y reorganizar elementos sin modificar el HTML. Flexbox mejora la adaptabilidad y el orden visual en sitios web modernos.
+
