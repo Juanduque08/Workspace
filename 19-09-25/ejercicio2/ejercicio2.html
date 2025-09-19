@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Botones</h1>
+
+    <button id="mostrarNombre">Nombre</button>
+    <button id="mostrarNumeros">numeros </button>
+    <button id="cambiarColor">Color de Fondo</button>
+
+
+    <div class="content" id="contenido"></div>
+
+    <script>
+
+        document.getElementById("mostrarNombre").addEventListener("click", function() {
+            document.getElementById("contenido").textContent = "Juan Esteban";
+        });
+
+        document.getElementById("mostrarNumeros").addEventListener("click", function() {
+            let numeros = "";
+            for (let i = 0; i < 10; i++) {
+                numeros += Math.floor(Math.random() * 100) + " ";
+            }
+            document.getElementById("contenido").textContent = numeros;
+        });
+
+        document.getElementById("cambiarColor").addEventListener("click", function() {
+            const colores = ["#FF5733", "#33FF57", "#3357FF", "#FF33A8", "#FFD700"];
+            const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+            document.body.style.backgroundColor = colorAleatorio;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <input type="button" value="Imprimir pares" onclick="pares()">
+    <div id="numeros"></div>
+    <script src="ejercicio1.js"></script>
+</body>
+</html>
+function pares(){
+    let numeros = document.getElementById("numeros");
+    //for para agregar numeros del 2 al 100
+    for(i = 2; i<=100; i++){
+        let hr1 = document.createElement("hr");
+        let numero = document.createElement("h2");
+        numero.innerHTML = i;
+        if(i % 2 == 0){
+            numeros.appendChild(numero);
+            numeros.appendChild(hr1);
+        }
+    }
+}
